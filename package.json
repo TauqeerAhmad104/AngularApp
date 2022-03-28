@@ -2,6 +2,7 @@
   "name": "manager-app2",
   "version": "0.0.0",
   "scripts": {
+    "cibuild": "ng test --single-run --c && ng build --prod --no-progress"
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
