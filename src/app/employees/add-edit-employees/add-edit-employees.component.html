@@ -1,0 +1,24 @@
+<div class="container mt-12">
+    <div class="mb-1">
+      <label for="firstName">First Name</label>
+      <input pInputText class="form-control" id="firstName" [(ngModel)]="employ.firstName" placeholder="First Name">
+    
+    </div><br>
+    <div class="mb-1">
+      <label for="lastName">Last Name</label>
+      <input pInputText class="form-control" id="lastName"  [(ngModel)]="employ.lastName" placeholder="Last Name">
+    </div><br>
+    <div class="mb-1">
+      <label for="dateOfBirth">Date Of Birth</label> <br>
+      <p-calendar class="form-control" (onSelect)="onSelectMethod($event)" [yearNavigator]="true" yearRange="1980:2010"[(ngModel)]="employ.dateOfBirth" id="dateOfBirth" [showIcon]="true" inputId="icon" placeholder="Select Date" appendTo="body"></p-calendar>
+      
+    </div><br>
+    <div class="mb-1">
+      <label for="phoneNo">Phone</label>
+      <input pInputText class="form-control" id="phoneNo"  [(ngModel)]="employ.phoneNo" placeholder="Phone No">
+    </div> <br>
+    <div class="mb-1">
+        <label for="position">Position</label>
+        <input pInputText class="form-control" id="position"  [(ngModel)]="employ.position" placeholder="Position">
+      </div>
+</div>

@@ -1,0 +1,36 @@
+<p-button (click)="addNewDialogEmp()" icon="pi pi-external-link" label="Add New Employee"></p-button>
+<p-dialog header="[DialgTitle]" [(visible)]="displayMaximizable" header="Add New Employee" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"[draggable]="true" [resizable]="true">
+    <app-add-edit-employees [employ] ="employ" *ngIf="displayMaximizable"></app-add-edit-employees>
+      <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="addEmployee()" *ngIf="employ.id==0" label="Add" class="p-button-text"></p-button>
+            <p-button icon="pi pi-times" (click)="updateEmployee()" *ngIf="employ.id!=0" label="update"></p-button>
+            <p-button icon="pi pi-times" (click)="displayMaximizable=false"label="No"></p-button>
+        </ng-template>
+</p-dialog>
+
+<p-table responsiveLayout="scroll" [value]="employeeList">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+            <th>Phone No</th>
+            <th>Position</th>
+        </tr>  
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+        <tr>
+            <td>{{employee.id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.lastName}}</td>
+            <td>{{employee.dateOfBirth}}</td>
+            <td>{{employee.phoneNo}}</td>
+            <td>{{employee.position}}</td>
+            <td>
+                <button (click)="editDialogEmp(employee)" pButton pRipple type="button" icon="pi pi-user-edit" class="p-button-rounded"></button>
+                <button (click)="deleteDialogEmp(employee)" pButton pRipple type="button" icon="pi pi-trash" class="p-button-rounded"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

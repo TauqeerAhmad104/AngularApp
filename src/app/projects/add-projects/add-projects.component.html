@@ -1,0 +1,73 @@
+
+ <div class="container mt-12">
+      <div class="mb-1">
+        <label for="projectName">Project Name</label>
+        <input pInputText class="form-control" id="projectName" [(ngModel)]="proj.projectName" placeholder="ProjectName">
+      </div><br>
+      <div class="mb-1">
+        <label for="clintName">Clint Name</label>
+        <input pInputText class="form-control" id="clintName"  [(ngModel)]="proj.clintName" placeholder="ClintName">
+      </div><br>
+      <div class="mb-1">
+        <label for="initiationDate">Initiation Date</label>
+        <p-calendar (onSelect)="onSelectMethod($event) " class="form-control" [showTime]="false" [showIcon]="true" inputId="icon" id="initiationDate" [yearNavigator]="true" yearRange="2020:2050" [(ngModel)]="proj.initiationDate " placeholder="Select Date" appendTo="body"></p-calendar>
+      
+      </div><br>
+      <div class="mb-1">
+        <label for="duration">Duration</label>
+        <input pInputText class="form-control" id="duration"  [(ngModel)]="proj.duration" placeholder="Duration">
+      </div>
+    </div>
+
+
+
+
+
+
+<!-- <form [formGroup]="proj" (ngSubmit)= "onSubmit()" >
+  <p-panel header="Validate">
+      <div class="p-fluid forms-grid" style="margin: 1em 0">
+          <div>
+              <div>Project Name *</div>
+              <input pInputText type="text" formControlName="projectName" placeholder="Required"/>
+              <p-message severity="error" text="projectName is required" *ngIf="!proj.controls['projectName'].valid&&proj.controls['projectName'].dirty"></p-message>
+          </div>
+          <div>
+              <div>Clint Name *</div>
+              <input pInputText type="text" formControlName="clintName" placeholder="Required"/>
+              <p-message severity="error" text="clintName is required" *ngIf="!proj.controls['clintName'].valid&&proj.controls['clintName'].dirty"></p-message>
+          </div>
+          <div>
+              <div>Initiation Date*</div>
+              <p-calendar formControlName="initiationDate" dateFormat="dd.mm.yy"></p-calendar>
+              <p-message 
+              severity="error" 
+              text=" initiationDate is required" *ngIf="!proj.controls['initiationDate'].valid&&proj.controls['initiationDate'].dirty"></p-message>
+          </div>
+          <div>
+              <div>Duration</div>
+              <input pInputText type="text" formControlName="duration" placeholder="Required"/>
+              <p-message severity="error" text="Duration is required" *ngIf="!proj.controls['duration'].valid&&proj.controls['duration'].dirty"></p-message>
+          </div>
+           <!- <div>
+              <button pButton type="submit" label="Submit" [disabled]="!proj.valid"></button>
+          </div> 
+
+           <div style="text-align:center;margin-top:20px" *ngIf="submitted">
+              Form Submitted
+              <br>
+                {{diagnostic}}
+          </div> 
+      </div> 
+  </p-panel>
+</form> -->
+
+
+
+<!-- This is Diffrent -->
+
+    <!-- <p-button icon="pi pi-check" (click)="addProject()" *ngIf="proj.id==0" label="Add" class="p-button-text"></p-button>
+    <p-button icon="pi pi-times" (click)="updateProject()" *ngIf="proj.id!=0" label="update"></p-button> -->
+     <!-- <p-button icon="pi pi-times" (click)="displayMaximizable=false"label="No"></p-button> -->
+
+   

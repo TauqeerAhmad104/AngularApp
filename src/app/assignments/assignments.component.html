@@ -1,0 +1,24 @@
+
+
+<p-dropdown [options]="projects" [(ngModel)]="selectedProject" placeholder="Select a Project"
+optionLabel="projectName"
+(onChange)="onChange($event)"></p-dropdown>
+
+
+<p-pickList [source]="sourceEmployees" [target]="targetEmployees" sourceHeader="Available" targetHeader="Selected" dragdrop="true"
+    [responsive]="true" [sourceStyle]="{'height':'300px'}" [targetStyle]="{'height':'300px'}" filterBy="name"
+    sourceFilterPlaceholder="Search by name" targetFilterPlaceholder="Search by name"
+    (onMoveToSource)="onMovetoSource($event)" (onMoveToTarget)="onMoveToTarget($event)"
+     
+    >
+    <ng-template let-employee pTemplate="item">
+        <div class="employee-item">
+            <div class="project-list-detail">
+                <h5 class="p-mb-2">{{employee.name}}</h5>
+                <i class="pi pi-tag project-category-icon"></i>
+                <span class="project-category">test222</span>
+            </div>
+        </div>
+    </ng-template>
+</p-pickList>
+
