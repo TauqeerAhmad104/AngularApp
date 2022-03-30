@@ -2,14 +2,14 @@
 
 #FROM node:10-alpine as build-step
 
-RUN mkdir -p /app
+RUN mkdir -p /AngularApp
 
-WORKDIR /app
+WORKDIR /AngularApp
 
-COPY package.json /app
+COPY package.json /AngularApp
 RUN npm install
 
-COPY . /app
+COPY . /AngularApp
 RUN npm run build --prod
 # Stage 2
 #FROM nginx:1.17.1-alpine
