@@ -15,7 +15,9 @@ RUN ls
 RUN npm install
 RUN ls
 RUN ip addr
+RUN EXPOSE 4200
 EXPOSE 4200
+RUN cat Dockerfile
 RUN npm start
 # Stage 2
 #FROM nginx:1.17.1-alpine
