@@ -1,12 +1,12 @@
 # Stage 1
 
 #FROM node:10-alpine as build-step
-
+FROM node:10-alpine as build-step
 RUN mkdir -p /AngularApp
 
 WORKDIR /AngularApp
 
-COPY package.json /AngularApp
+COPY package.json build-step/AngularApp
 RUN npm install
 
 COPY . /AngularApp
