@@ -14,6 +14,7 @@ COPY . /AngularApp
 RUN ls
 RUN npm install
 RUN ls
+RUN ip addr
 RUN npm start
 # Stage 2
 #FROM nginx:1.17.1-alpine
