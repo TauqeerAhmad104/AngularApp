@@ -10,7 +10,7 @@ COPY package.json build-step/AngularApp
 RUN npm install
 
 COPY . /AngularApp
-RUN npm run build --prod
+RUN node_modules/.bin/ng build --prod
 # Stage 2
 #FROM nginx:1.17.1-alpine
 
