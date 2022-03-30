@@ -1,15 +1,12 @@
 # Stage 1
 
 #FROM node:10-alpine as build-step
-FROM node:10-alpine as build-step
+FROM node:14-alpine as build-step
 RUN mkdir -p /AngularApp
 
 WORKDIR /AngularApp
 
-COPY package.json build-step/AngularApp
-RUN nvm install 11  
-RUN nvm install 12
-RUN nvm alias default 12  
+COPY package.json build-step/AngularApp  
 RUN npm install
 RUN npm link @angular/cli
 
