@@ -1,24 +1,14 @@
 # Stage 1
 
-#FROM node:10-alpine as build-step
-FROM node:14-alpine as build-step
-RUN mkdir -p /AngularApp
+FROM node AS build
+WORKDIR /app
 
-WORKDIR /AngularApp
+COPY . ./
+COPY package.json /app/package.json
 
-COPY package.json build-step/AngularApp  
 RUN npm install
-RUN npm link @angular/cli
+RUN npm install -g @angular/cli
 
-COPY . /AngularApp
-RUN ls
-RUN npm install
-RUN ls
-RUN ip addr
-EXPOSE 4200
-RUN cat Dockerfile
-RUN ng serve
-# Stage 2
-#FROM nginx:1.17.1-alpine
+COPY . /app
 
-#COPY --from=build-step /app/docs /usr/share/nginx/html
+CMD ng serve --host 0.0.0.0
