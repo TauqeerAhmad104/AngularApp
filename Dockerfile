@@ -17,7 +17,7 @@ RUN ls
 RUN ip addr
 EXPOSE 4200
 RUN cat Dockerfile
-RUN npm start
+RUN ng serve
 # Stage 2
 #FROM nginx:1.17.1-alpine
 
