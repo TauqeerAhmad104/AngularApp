@@ -8,6 +8,7 @@ WORKDIR /AngularApp
 
 COPY package.json build-step/AngularApp
 RUN npm install
+RUN npm link @angular/cli
 
 COPY . /AngularApp
 RUN node_modules/.bin/ng build --prod
