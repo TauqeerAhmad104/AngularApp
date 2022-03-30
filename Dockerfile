@@ -10,7 +10,7 @@ RUN npm install
 RUN npm install -g @angular/cli
 
 COPY . /app
-
+RUN -p 4201:4200 app:latest
 CMD ng serve --host 0.0.0.0
 
-RUN -p 4201:4200 app:latest
+
