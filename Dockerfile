@@ -11,8 +11,11 @@ RUN npm install
 RUN npm link @angular/cli
 
 COPY . /AngularApp
+RUN ls
 RUN cd AngularApp
+RUN ls
 RUN npm install
+RUN ls
 RUN npm start
 # Stage 2
 #FROM nginx:1.17.1-alpine
