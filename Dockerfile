@@ -7,6 +7,9 @@ RUN mkdir -p /AngularApp
 WORKDIR /AngularApp
 
 COPY package.json build-step/AngularApp
+RUN nvm install 11  
+RUN nvm install 12
+RUN nvm alias default 12  
 RUN npm install
 RUN npm link @angular/cli
 
