@@ -12,8 +12,6 @@ RUN npm link @angular/cli
 
 COPY . /AngularApp
 RUN ls
-RUN cd AngularApp
-RUN ls
 RUN npm install
 RUN ls
 RUN npm start
