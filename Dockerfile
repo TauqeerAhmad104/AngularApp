@@ -10,9 +10,7 @@ RUN npm install
 RUN npm install -g @angular/cli
 
 COPY . /app
-EXPOSE 4242
-
-CMD ng serve --host 0.0.0.0
+CMD ng serve --host 0.0.0.0:4040
 
 #CMD ["npm", "run", "start"]
 
