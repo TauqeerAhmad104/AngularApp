@@ -6,7 +6,7 @@ node {
       }     
       stage('Build image') {         
        
-            app = docker.build("myApp")    
+            app = docker.build("my")    
        }
      stage('Test image') {
         /* Ideally, we would run a test framework against our image.
