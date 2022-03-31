@@ -17,17 +17,12 @@ node {
         }
     }
 
-       stage('Run image') {
-       // docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
-       // app.push("${env.BUILD_NUMBER}")            
-       // app.push("latest") 
-        docker run -p 4242:4200 myapp:0.1 
+       stage('Push image') {
+       docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
+       app.push("${env.BUILD_NUMBER}")            
+       app.push("latest") 
+        
              }    
             }
 
 }
-
-
-//   stage("Run Image"){
-//    docker run -p 4201:4200 myapp:0.1 
-//   }
