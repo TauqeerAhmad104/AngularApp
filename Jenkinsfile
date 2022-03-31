@@ -21,7 +21,7 @@ node {
        // docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
        // app.push("${env.BUILD_NUMBER}")            
        // app.push("latest") 
-         app.run(docker run -p 4242:4242 myApp:0.1
+        docker run -p 4242:4200 myapp:0.1 
              }    
             }
 
