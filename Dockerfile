@@ -13,9 +13,9 @@ COPY . /app
 
 EXPOSE 4242
 
-
+CMD ["ng serve", "docker run -d -p host 0.0.0.0:4242", "daemon off;"]
 #CMD ["ng serve", "-g", "--host 0.0.0.0", "daemon off;"]
-CMD ng serve --host 0.0.0.0
+#CMD ng serve --host 0.0.0.0
 
 #CMD ["npm", "run", "start"]
 
