@@ -3,7 +3,7 @@
 FROM node AS build
 WORKDIR /app
 
-#COPY . ./
+COPY . ./
 COPY package.json /app/package.json
 
 RUN npm install
