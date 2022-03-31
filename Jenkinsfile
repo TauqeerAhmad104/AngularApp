@@ -17,10 +17,11 @@ node {
         }
     }
          
-       stage('Push image') {
-       docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
-       app.push("${env.BUILD_NUMBER}")            
-       app.push("latest")        
-              }    
-           }
-        }
+//        stage('Push image') {
+//         docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
+//         app.push("${env.BUILD_NUMBER}")            
+//         app.push("latest")        
+//              }    
+//             }
+
+}
