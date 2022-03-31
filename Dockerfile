@@ -4,13 +4,14 @@ FROM node AS build
 WORKDIR /app
 
 COPY . ./
-COPY package.json /Tauqeerapp/package.json
+COPY package.json /app/package.json
 
 RUN npm install
 RUN npm install -g @angular/cli
-RUN -p 4202:4200 app:latest
 
 COPY . /app
-CMD ng serve --host 0.0.0.0
+EXPOSE 4242
+CMD ["npm", "run", "start"]
+#CMD ng serve --host 0.0.0.0
 
 
