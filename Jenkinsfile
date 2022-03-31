@@ -6,7 +6,7 @@ node {
       }     
       stage('Build image') {         
        
-            app = docker.build("tauqeerdocker/my")    
+            app = docker.build("myApp")    
        }
      stage('Test image') {
         /* Ideally, we would run a test framework against our image.
@@ -16,12 +16,18 @@ node {
             sh 'echo "Tests passed"'
         }
     }
-         
-//        stage('Push image') {
-//         docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
-//         app.push("${env.BUILD_NUMBER}")            
-//         app.push("latest")        
-//              }    
-//             }
+
+       stage('Run image') {
+       // docker.withRegistry('https://hub.docker.com/repository/docker/tauqeerdocker/my', 'docker-hub-credentials') {            
+       // app.push("${env.BUILD_NUMBER}")            
+       // app.push("latest") 
+         app.run(docker run -p 4242:4242 myApp:0.1
+             }    
+            }
 
 }
+
+
+//   stage("Run Image"){
+//    docker run -p 4201:4200 myapp:0.1 
+//   }
