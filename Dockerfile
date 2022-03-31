@@ -14,7 +14,7 @@ COPY . /app
 EXPOSE 4242
 
 
-CMD ["ng serve", "-g", "daemon off" "--host 0.0.0.0;"]
+CMD ["ng serve", "-g", "--host 0.0.0.0", "daemon off;"]
 #CMD ng serve --host 0.0.0.0
 
 #CMD ["npm", "run", "start"]
