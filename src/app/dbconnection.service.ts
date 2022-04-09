@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DBconnectionService {
-  readonly APIUrl="http://localhost:34640/api";
+  readonly APIUrl="http://angular-app-api:80/api";
 
   constructor(private http: HttpClient) { }
   //projects connection
